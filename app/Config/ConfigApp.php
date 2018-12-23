@@ -8,6 +8,14 @@ abstract class ConfigApp implements ArrayAccess {
 
     protected $config = array();
 
+    public function __construct() {
+        $this->parameters();
+    }
+    protected function parameters(): void {
+        /**
+         * Optional parameters
+         */
+    }
     public function offsetSet($offset, $value) {
         if (is_null($offset)) {
             $this->config[] = $value;

@@ -3,11 +3,10 @@
 namespace App\Deployer\FilesProvider;
 
 use App\Config\DeployerConfig;
-use App\Config\Params\DeployerParam;
 use App\Deployer\FilesProvider\FilesProvider;
-use Cz\Git\GitRepository;
 
-class GitFilesProvider implements FilesProvider {
+
+class VendorDiffProvider implements FilesProvider {
     private $basePath = null;
     private $config = null;
 
@@ -23,10 +22,6 @@ class GitFilesProvider implements FilesProvider {
      * @return Array<string>
      */
     public function getListFiles(): array {
-        $projectPath  = $this->config[DeployerParam::PROJECT_PATH];
-        $repo =  new GitRepository($projectPath);
-        var_dump($repo->hasChanges());
-
         return array();
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\Deployer;
+use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Controller as BaseController;
 
 class Controller extends BaseController
@@ -16,6 +17,6 @@ class Controller extends BaseController
         $this->deployer = $deployer;
     }
     public function index(Request $req) {
-
+        return $this->deployer->loadFiles();
     }
 }
